@@ -241,12 +241,12 @@ static ssize_t mpu_read(struct file *file, char __user *buf, size_t count, loff_
 	return ret ? ret : copied;
 }
 
-static ssize_t mpu_open(struct inode * inode, struct file * file_ptr) {
+static int mpu_open(struct inode * inode, struct file * file_ptr) {
 	printk("Opened mpu 6000\n");
 	return 0;
 }
 
-static ssize_t mpu_close(struct inode * inode, struct file * file_ptr) {
+static int mpu_close(struct inode * inode, struct file * file_ptr) {
 	printk("Closed mpu 6000\n");
 	return 0;
 }
